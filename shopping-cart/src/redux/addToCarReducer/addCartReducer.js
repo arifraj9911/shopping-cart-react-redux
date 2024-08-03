@@ -1,5 +1,5 @@
 /* eslint-disable no-case-declarations */
-import { ADDTOCART } from "./actionTypes";
+import { ADDTOCART, DECREASEQUANTITY, INCREASEQUANTITY } from "./actionTypes";
 import { initialState } from "./initialState";
 
 const addCartReducer = (state = initialState, actions) => {
@@ -10,6 +10,19 @@ const addCartReducer = (state = initialState, actions) => {
         return state;
       }
       return [...state, actions.payload];
+
+    case INCREASEQUANTITY:
+      return state.map((item) =>
+        item.id === actions.payload.id
+          ? { ...item, quantity: parseInt(item.quantity) + 1 }
+          : item
+      );
+    case DECREASEQUANTITY:
+      return state.map((item) =>
+        item.id === actions.payload.id
+          ? { ...item, quantity: parseInt(item.quantity) - 1 }
+          : item
+      );
 
     default:
       return state;

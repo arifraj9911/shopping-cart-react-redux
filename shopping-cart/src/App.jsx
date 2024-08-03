@@ -6,6 +6,8 @@ import "./App.css";
 import { useState } from "react";
 import CartItem from "./components/Cart/CartItem";
 import BiilDetails from "./components/Cart/BiilDetails";
+import {Provider} from 'react-redux'
+import store from "./redux/store";
 
 function App() {
   const [toggleCart, setToggleCart] = useState(false);
@@ -14,6 +16,7 @@ function App() {
   };
   return (
     <>
+    <Provider store={store}>
       <Header handleToggleCart={handleToggleCart} setToggleCart={setToggleCart}></Header>
       {toggleCart ? (
         <div className="product-container">
@@ -40,6 +43,7 @@ function App() {
           </div>
         </div>
       )}
+      </Provider>
     </>
   );
 }

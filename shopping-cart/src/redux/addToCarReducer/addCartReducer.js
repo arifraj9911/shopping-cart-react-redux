@@ -2,6 +2,7 @@
 import {
   ADDTOCART,
   DECREASEQUANTITY,
+  DELETE,
   INCREASEQUANTITY,
   // TOTALPRICE,
 } from "./actionTypes";
@@ -36,12 +37,9 @@ const addCartReducer = (state = initialState, actions) => {
             }
           : item
       );
-    // case TOTALPRICE:
-    //   return state.map((item) =>
-    //     item.id === actions.payload.id
-    //       ? { ...item, price: parseInt(item.quantity) * parseInt(item.price) }
-    //       : item
-    //   );
+
+    case DELETE:
+      return state.filter((item) => item.id !== actions.payload);
 
     default:
       return state;

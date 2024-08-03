@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import {
   decreaseQuantity,
+  deleteItem,
   increaseQuantity,
   // totalPrice,
 } from "../../redux/addToCarReducer/actions";
@@ -14,6 +15,9 @@ const CartItem = () => {
   };
   const handleDecreaseQuantity = (items) => {
     dispatch(decreaseQuantity(items));
+  };
+  const handleDelete = (itemId) => {
+    dispatch(deleteItem(itemId));
   };
   // const handleTotalPrice = (items) => {
   //   dispatch(totalPrice(items));
@@ -64,7 +68,10 @@ const CartItem = () => {
                 </p>
               </div>
               <div className="flex items-center justify-center col-span-2 mt-4 md:justify-end md:mt-0">
-                <button className="lws-removeFromCart">
+                <button
+                  onClick={() => handleDelete(item.id)}
+                  className="lws-removeFromCart"
+                >
                   <i className="text-lg text-red-400 fa-solid fa-trash">X</i>
                 </button>
               </div>

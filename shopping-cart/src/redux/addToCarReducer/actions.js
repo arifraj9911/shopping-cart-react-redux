@@ -1,6 +1,6 @@
 // import { ADDTOCART } from "../productReducer/actionTypes"
 
-import { ADDTOCART, DECREASEQUANTITY, INCREASEQUANTITY } from "./actionTypes"
+import { ADDTOCART, DECREASEQUANTITY, DELETE, INCREASEQUANTITY } from "./actionTypes"
 
 export const addToCart = (item)=>{
     return {
@@ -20,9 +20,9 @@ export const decreaseQuantity = (item)=>{
         payload:item
     }
 }
-// export const totalPrice = (item)=>{
-//     return {
-//         type:DECREASEQUANTITY,
-//         payload:item
-//     }
-// }
+export const deleteItem = (itemId)=>{
+    return {
+        type:DELETE,
+        payload:itemId
+    }
+}

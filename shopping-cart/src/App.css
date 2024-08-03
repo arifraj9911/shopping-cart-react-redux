@@ -1,0 +1,13 @@
+.product-container{
+  display: flex;
+  justify-content: space-between;
+  max-width: 1280px;
+  margin: 20px auto;
+}
+.product-item-div{
+  width: 60%;
+  /* border: 1px solid; */
+}
+.product-sidebar-div{
+  width: 40%;
+}

@@ -20,6 +20,8 @@ const ProductsSidebar = () => {
 
     dispatch(addedItem(items))
 
+    form.reset()
+
   }
 
   console.log(items)

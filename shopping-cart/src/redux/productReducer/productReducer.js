@@ -10,7 +10,7 @@ const nextId = (items) => {
   }
 };
 
-const reducer = (state = initialState, actions) => {
+const productReducer = (state = initialState, actions) => {
   switch (actions.type) {
     case ADDED:
       return [
@@ -30,4 +30,4 @@ const reducer = (state = initialState, actions) => {
   }
 };
 
-export default reducer;
+export default productReducer;

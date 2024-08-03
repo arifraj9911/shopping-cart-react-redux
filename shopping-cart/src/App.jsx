@@ -6,18 +6,26 @@ import "./App.css";
 import { useState } from "react";
 import CartItem from "./components/Cart/CartItem";
 import BiilDetails from "./components/Cart/BiilDetails";
-import {Provider} from 'react-redux'
-import store from "./redux/store";
+
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "./redux/addToCarReducer/actions";
 
 function App() {
   const [toggleCart, setToggleCart] = useState(false);
+  
+  const addCart = useSelector((state) => state.addCart);
+  const dispatch = useDispatch();
+  
   const handleToggleCart = () => {
     setToggleCart(true);
   };
+  const handleAddToCart = (item)=>{
+    dispatch(addToCart(item))
+  }
+  console.log(addCart.length)
   return (
     <>
-    <Provider store={store}>
-      <Header handleToggleCart={handleToggleCart} setToggleCart={setToggleCart}></Header>
+    <Header handleToggleCart={handleToggleCart} setToggleCart={setToggleCart}></Header>
       {toggleCart ? (
         <div className="product-container">
           {/* products item */}
@@ -34,7 +42,7 @@ function App() {
         <div className="product-container">
           {/* products item */}
           <div className="product-item-div">
-            <ProductsItem></ProductsItem>
+            <ProductsItem handleAddToCart={handleAddToCart}></ProductsItem>
           </div>
 
           {/* products sidebar */}
@@ -43,7 +51,6 @@ function App() {
           </div>
         </div>
       )}
-      </Provider>
     </>
   );
 }

@@ -1,4 +1,4 @@
-import { ADDED, ADDTOCART } from "./actionTypes"
+import { ADDED } from "./actionTypes"
 
 export const addedItem = (items)=>{
     return {
@@ -7,9 +7,3 @@ export const addedItem = (items)=>{
     }
 }
 
-export const addToCart = (itemId)=>{
-    return {
-        type:ADDTOCART,
-        payload:itemId
-    }
-}

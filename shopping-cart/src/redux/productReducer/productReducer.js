@@ -20,8 +20,9 @@ const productReducer = (state = initialState, actions) => {
           productName: actions.payload.productName,
           category: actions.payload.category,
           imageUrl: actions.payload.imageUrl,
-          price: actions.payload.price,
-          quantity: actions.payload.quantity,
+          price: parseInt(actions.payload.price),
+          quantity: parseInt(actions.payload.quantity),
+          totalPrice: actions.payload.totalPrice,
         },
       ];
 

@@ -2,6 +2,7 @@ import { useSelector, useDispatch } from "react-redux";
 import {
   decreaseQuantity,
   increaseQuantity,
+  // totalPrice,
 } from "../../redux/addToCarReducer/actions";
 
 const CartItem = () => {
@@ -14,6 +15,12 @@ const CartItem = () => {
   const handleDecreaseQuantity = (items) => {
     dispatch(decreaseQuantity(items));
   };
+  // const handleTotalPrice = (items) => {
+  //   dispatch(totalPrice(items));
+  // };
+
+  // console.log(addCart)
+
   return (
     <div className="space-y-6">
       <h2 className="mb-8 text-xl font-bold">Shopping Cart</h2>
@@ -52,7 +59,8 @@ const CartItem = () => {
                   </button>
                 </div>
                 <p className="text-lg font-bold">
-                  BDT <span className="lws-calculatedPrice">2200</span>
+                  BDT{" "}
+                  <span className="lws-calculatedPrice">{item.totalPrice}</span>
                 </p>
               </div>
               <div className="flex items-center justify-center col-span-2 mt-4 md:justify-end md:mt-0">

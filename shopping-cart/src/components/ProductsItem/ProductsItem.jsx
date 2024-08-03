@@ -8,7 +8,7 @@ const ProductsItem = ({handleAddToCart}) => {
 
   
 
-  // console.log(addCart)
+  console.log(items)
 
   return (
     <div className="productContainer" id="lws-productContainer">

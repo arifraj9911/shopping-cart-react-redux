@@ -15,8 +15,9 @@ const ProductsSidebar = () => {
     const imageUrl = form.imageUrl.value;
     const price = form.price.value;
     const quantity = form.quantity.value;
+    const totalPrice = parseInt(quantity)*parseInt(price)
 
-    const items = {productName,category,imageUrl,price,quantity};
+    const items = {productName,category,imageUrl,price,quantity,totalPrice};
 
     dispatch(addedItem(items))
 

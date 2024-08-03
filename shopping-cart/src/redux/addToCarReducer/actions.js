@@ -20,3 +20,9 @@ export const decreaseQuantity = (item)=>{
         payload:item
     }
 }
+// export const totalPrice = (item)=>{
+//     return {
+//         type:DECREASEQUANTITY,
+//         payload:item
+//     }
+// }
